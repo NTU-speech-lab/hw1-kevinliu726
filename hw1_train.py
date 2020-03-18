@@ -32,8 +32,8 @@ for i in range(len(x)): #12 * 471
 np.save('std.npy', std_x)
 np.save('mean.npy', mean_x)
 import math
-x_train_set = x[: math.floor(len(x) * 1), :]
-y_train_set = y[: math.floor(len(y) * 1), :]
+x_train_set = x[: math.floor(len(x) * 0.8), :]
+y_train_set = y[: math.floor(len(y) * 0.8), :]
 x_validation = x[math.floor(len(x) * 0.8): , :]
 y_validation = y[math.floor(len(y) * 0.8): , :]
 
@@ -41,7 +41,7 @@ dim = 18 * 9 + 1
 w = np.zeros([dim, 1])
 x = np.concatenate((np.ones([12 * 471, 1]), x), axis = 1).astype(float)
 learning_rate = 100
-iter_time = 10000
+iter_time = 5000
 adagrad = np.zeros([dim, 1])
 eps = 1e-7
 for t in range(iter_time):
